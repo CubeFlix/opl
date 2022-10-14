@@ -1,0 +1,41 @@
+// MATH1.opl
+// An interface to the math module for single valued functions.
+// Args: arg0 -> name of the function
+//       arg1 -> value to calculate with
+// 
+// 
+// BEGIN OPL
+// ARG1 INT -> FLOAT
+40 i1 i1
+// DEFINE PARENS
+2 s'(' i100
+2 s')' i101
+// DEFINE MATH
+2 s'math.' i104
+// APPEND NAME -> MATH
+4 i0 i104 i0
+// APPEND OPEN PAREN -> MATH.NAME
+4 i100 i0 i0
+// APPEND VALUE ARG0 -> MATH.NAME(
+4 i1 i0 i0
+// APPEND CLOSE PAREN -> MATH.NAME(VALUE
+4 i101 i0 i0
+// DEFINE CODE TO SAVE RESULTING VALUE
+2 s'self.memory[0] = struct.pack(\'f\', ' i102
+// APPEND CODE -> MEMORY SAVE CODE
+4 i0 i102 i0
+// APPEND CLOSE PAREN -> MEMORY SAVE CODE
+4 i101 i0 i0
+// DEFINE IMPORT MATH CODE
+2 s'math = __import__(\'math\')' i103
+// EXECUTE IMPORT MATH
+97 i103
+// EXECUTE CALCULATION CODE
+97 i0
+// DELETE BACKGROUND VARIABLES
+19 i1
+19 i100
+19 i101
+19 i102
+19 i103
+19 i104

@@ -1,0 +1,9 @@
+0
+// set code buffer
+// get code
+2 s'code1.opl.opc' i0
+46 i0 i1
+// 30 i1 i0
+2 i0 i2
+50 i1 i2
+1 i0

@@ -1,0 +1,10 @@
+0
+// set random memory
+2 s'Hello World!' i0
+2 f123.4 i1
+// get memory
+53 i2
+// change memory
+54 i2
+29
+1 i0

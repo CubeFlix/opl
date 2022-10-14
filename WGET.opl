@@ -1,0 +1,17 @@
+// WGET (Web Get Downloader)
+// Downloads runtime arg0 to runtime arg1
+
+// CODE BEGIN
+0
+// GET ARG0
+2 i0 i100
+28 i0 i0
+// LOAD WGET
+2 s'WGETLIB.lib' i101
+118 i101
+// GET THE DATA
+200 i0 i1
+// OUTPUT THE DATA
+30 i1 i0
+// END, NO RETURN
+1 b

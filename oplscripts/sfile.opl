@@ -1,0 +1,6 @@
+0
+// save file
+2 s'Hello world! edited from opl code!' i0
+2 s'hello.txt' i1
+47 i1 i0
+1 i0

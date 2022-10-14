@@ -1,0 +1,486 @@
+OPL OPCODE DOCUMENTATION
+------------------------
+
+OPCODE 0 
+Start the program.
+
+OPCODE 1 arg0
+End the program, returning arg0.
+
+OPCODE 2 arg0 arg1
+Set arg0 to memory address arg1.
+
+OPCODE 3 arg0 arg1
+Copy arg0 to arg1.
+
+OPCODE 4 arg0 arg1 arg2
+Append data at arg0 to arg1 and save to arg2.
+
+OPCODE 5 arg0 arg1 arg2
+Append data at arg0 to arg1 at position arg2.
+
+OPCODE 6 arg0 arg1
+Truncate arg1 bytes from end of arg0.
+
+OPCODE 7 arg0 arg1
+Truncate arg1 bytes from start of arg0.
+
+OPCODE 8 arg0 arg1 arg2
+Truncate arg1 bytes from arg0 at arg2.
+
+OPCODE 9 arg0 arg1
+Get length of data at arg0 and save to arg1.
+
+OPCODE 10 arg0 arg1 arg2
+Add the values at arg0 and arg1 and save to arg2.
+
+OPCODE 11 arg0 arg1 arg2
+Subtract the values at arg0 and arg1 and save to arg2.
+
+OPCODE 12 arg0 arg1 arg2
+Multiply the values at arg0 and arg1 and save to arg2.
+
+OPCODE 13 arg0 arg1 arg2
+Divide the values at arg0 and arg1 and save to arg2.
+
+OPCODE 14 arg0 arg1 arg2
+Raise arg0 to the power of arg1 and save to arg2.
+
+OPCODE 15 arg0 arg1 arg2
+Preform an and gate on arg0 and arg1, save to arg2.
+
+OPCODE 16 arg0 arg1 arg2
+Preform an or gate on arg0 and arg1, save to arg2.
+
+OPCODE 17 arg0 arg1 arg2
+Preform an xor gate on arg0 and arg1, save to arg2.
+
+OPCODE 18 arg0 arg1
+Preform a not gate on arg0, save to arg1.
+
+OPCODE 19 arg0
+Remove data at arg0.
+
+OPCODE 20 arg0
+Go to line arg0.
+
+OPCODE 21 arg0 arg1 arg2
+Go to line arg0 if arg1 == arg2.
+
+OPCODE 22 arg0 arg1 arg2
+Go to line arg0 if arg1 > arg2 (float).
+
+OPCODE 23 arg0 arg1 arg2
+Go to line arg0 if arg1 < arg2 (float).
+
+OPCODE 24 arg0 arg1 arg2
+Go to line arg0 if arg1 >= arg2 (float).
+
+OPCODE 25 arg0 arg1 arg2
+Go to line arg0 if arg1 <= arg2 (float).
+
+OPCODE 26 arg0 arg1 arg2 arg3
+Takes arg0 to arg1 from arg2, saves to arg3.
+
+OPCODE 27 arg0
+Gets input from standard input, saves to arg0.
+
+OPCODE 28 arg0 arg1
+Gets arg0 of inputted cmd args and sets to arg1 (string).
+
+OPCODE 29 
+Print the memory.
+
+OPCODE 30 arg0
+Add data at arg0 to self.output.
+
+OPCODE 31 arg0 arg1 arg2
+Add the values at arg0 and arg1 and save to arg2 (int).
+
+OPCODE 32 arg0 arg1 arg2
+Subtract the values at arg0 and arg1 and save to arg2 (int).
+
+OPCODE 33 arg0 arg1 arg2
+Multiply the values at arg0 and arg1 and save to arg2 (int).
+
+OPCODE 34 arg0 arg1 arg2
+Divide the values at arg0 and arg1 and save to arg2 (int).
+
+OPCODE 35 arg0 arg1 arg2
+Raise arg0 to the power of arg1 and save to arg2 (int).
+
+OPCODE 36 arg0 arg1 arg2
+Preform an and gate on arg0 and arg1, save to arg2 (int).
+
+OPCODE 37 arg0 arg1 arg2
+Preform an or gate on arg0 and arg1, save to arg2 (int).
+
+OPCODE 38 arg0 arg1 arg2
+Preform an xor gate on arg0 and arg1, save to arg2 (int).
+
+OPCODE 39 arg0 arg1
+arg0 (int) to string and save to arg1.
+
+OPCODE 40 arg0 arg1
+arg0 (float) to string and save to arg1.
+
+OPCODE 41 arg0 arg1
+arg0 (string) to int and save to arg1.
+
+OPCODE 42 arg0 arg1
+arg0 (string) to float and save to arg1.
+
+OPCODE 43 arg0 arg1
+arg0 (int) to float and save to arg1.
+
+OPCODE 44 arg0 arg1
+arg0 (float) to int and save to arg1.
+
+OPCODE 45 arg0 arg1
+Duplicate arg0 arg1 times.
+
+OPCODE 46 arg0 arg1
+Load file arg0 and read bytes to arg1.
+
+OPCODE 47 arg0 arg1
+Write data at arg1 to file arg0.
+
+OPCODE 48 arg0
+Delete file at arg0.
+
+OPCODE 49 arg0
+Get the code buffer and save to arg0.
+
+OPCODE 50 arg0 arg1
+Change the code buffer to arg0 and set the line number to arg1.
+
+OPCODE 51 arg0
+Get the output buffer and set it to arg0.
+
+OPCODE 52 arg0
+Set the output buffer to arg0.
+
+OPCODE 53 arg0
+Get binary representation of memory and set to arg0.
+
+OPCODE 54 arg0
+Set memory using binary representation of memory at arg0.
+
+OPCODE 55 arg0 arg1
+Run system command arg0, save output to arg1.
+
+OPCODE 56 arg0 arg1
+Get arg0 chars from standard input, save to arg1.
+
+OPCODE 57 arg0
+Get listdir and save to arg0.
+
+OPCODE 58 
+Pass.
+
+OPCODE 59 arg0
+Get time.time and save to arg0.
+
+OPCODE 60 arg0
+Get time.asctime and save to arg0.
+
+OPCODE 61 arg0
+Wait arg0 (float) seconds.
+
+OPCODE 62 arg0 arg1
+Copy data at pointer of arg0 to arg1.
+
+OPCODE 63 arg0 arg1
+Set data at pointer at arg0 to arg1.
+
+OPCODE 64 arg0 arg1 arg2 arg3
+Go to line arg0 if arg1 == arg2 else arg3.
+
+OPCODE 65 arg0 arg1 arg2 arg3
+Go to line arg0 if arg1 > arg2 (float) else arg3.
+
+OPCODE 66 arg0 arg1 arg2 arg3
+Go to line arg0 if arg1 < arg2 (float) else arg3.
+
+OPCODE 67 arg0 arg1 arg2 arg3
+Go to line arg0 if arg1 >= arg2 (float) else arg3.
+
+OPCODE 68 arg0 arg1 arg2 arg3
+Go to line arg0 if arg1 <= arg2 (float) else arg3.
+
+OPCODE 69 arg0 arg1 arg2
+Modulo arg0 and arg1 and save to arg2 (float).
+
+OPCODE 70 arg0 arg1 arg2
+Modulo arg0 and arg1 and save to arg2 (int).
+
+OPCODE 71 arg0 arg1 arg2 arg3
+Go to line arg0 if arg1 == arg2 else arg3 (float).
+
+OPCODE 72 arg0 arg1 arg2
+Go to line arg0 if arg1 == arg2 (float).
+
+OPCODE 73 arg0 arg1
+Hash arg0 and save to arg1 (sha256).
+
+OPCODE 74 arg0 arg1
+Create a screen with size arg0 by arg1.
+
+OPCODE 75 
+Start the screen.
+
+OPCODE 76 
+End the screen.
+
+OPCODE 77 arg0 arg1 arg2 arg3 arg4
+Set pixel arg0 arg1 to color (arg2 arg3 arg4).
+
+OPCODE 78 arg0
+Set screen name to arg0.
+
+OPCODE 79 arg0
+Get the current screen buffer data and save to arg0.
+
+OPCODE 80 arg0
+Set the current screen buffer using data at arg0.
+
+OPCODE 81 arg0
+Get the shared OPL OS buffer and save to arg0.
+
+OPCODE 82 arg0
+Set the shared OPL OS buffer to arg0.
+
+OPCODE 83 arg0
+Get all memory keys and save to arg0.
+
+OPCODE 84 
+Delete all memory.
+
+OPCODE 85 arg0 arg1 arg2
+Preform a bit shift left << on arg0 with arg1 bits, and save to arg2.
+
+OPCODE 86 arg0 arg1 arg2
+Preform a bit shift right >> on arg0 with arg1 bits, and save to arg2.
+
+OPCODE 87 arg0 arg1
+Reverse the data at arg0, save to arg1.
+
+OPCODE 88 arg0 arg1
+Push code from arg0 to arg1 to a new thread. (asynchronous command) (OEP 001).
+
+OPCODE 89 arg0 arg1
+Push code from arg0 to arg1 to a new thread. (non-async command) (OEP 001).
+
+OPCODE 90 arg0
+Switch to namespace arg0 (OEP 003).
+
+OPCODE 91 arg0
+Create namespace arg0 (OEP 003).
+
+OPCODE 92 arg0
+Delete namespace arg0 (OEP 003).
+
+OPCODE 93 arg0
+Get all namespace IDs and save to arg0 (OEP 003).
+
+OPCODE 94 
+Delete all but the current namespace (OEP 003).
+
+OPCODE 95 arg0 arg1 arg2
+Copy data from arg0 in the current namespace to arg1 in namespace arg2 (OEP 007).
+
+OPCODE 96 arg0 arg1
+Import file at arg0 and load it into namespace arg1 (OEP 006, OEP 003).
+
+OPCODE 97 arg0
+Execute the code at arg0 in Python (OEP 011).
+
+OPCODE 98 arg0 arg1 arg2 arg3
+Goto line arg0 if arg1 is in arg2 else arg3.
+
+OPCODE 99 
+Allow closing the screen buffer (QUICK FIX).
+
+OPCODE 100 
+Disallow closing the screen buffer (QUICK FIX).
+
+OPCODE 101 arg0
+Get the OPL OS system data buffer and save to arg0 (OEP 012).
+
+OPCODE 102 arg0
+Set the OPL OS system data buffer to arg0 (Dangerous function, raises a warning) (OEP 012).
+
+OPCODE 103 arg0
+Get the name of the OPL OS user and save to arg0 (OEP 012).
+
+OPCODE 104 arg0
+Set the name of the OPL OS user to arg0 (OEP 012).
+
+OPCODE 105 arg0
+Get the password hash of the OPL OS and save to arg0 (OEP 012).
+
+OPCODE 106 arg0
+Set the password hash of the OPL OS to arg0 (OEP 012).
+
+OPCODE 107 arg0 arg1
+Get the current mouse x and y and set to arg0 and arg1 (OEP 017).
+
+OPCODE 108 arg0
+Set the memory address arg0 to be the address to use for handling mouse ups and downs (OEP 017).
+
+OPCODE 109 arg0
+Compile and run code at arg0 (OEP 016).
+
+OPCODE 110 arg0 arg1
+Compile the code at arg0 and save to arg1 (OEP 016).
+
+OPCODE 111 arg0
+Run the code at arg0 (OEP 016).
+
+OPCODE 112 
+Set the error mode to DISPLAY STOP (OEP 015).
+
+OPCODE 113 
+Set the error mode to DISPLAY (OEP 015).
+
+OPCODE 114 
+Set the error mode to STOP (OEP 015).
+
+OPCODE 115 
+Set the error mode to NONE (OEP 015).
+
+OPCODE 116 arg0 arg1 arg2
+Compare values arg0 and arg1 and set to arg2 (arg0 == arg1, arg2 = 0 : arg0 < arg1, arg2 = 1 : arg0 > arg1, arg2 = 2).
+
+OPCODE 117 arg0
+Get the IP address, and save to arg0 (OEP 002).
+
+OPCODE 118 arg0
+Load a binary module at arg0 to the current active namespace (Overwrites the current loaded module) (OEP 019).
+
+OPCODE 119 
+Remove the current loaded module for the active namespace (OEP 019).
+
+OPCODE 120 
+Set the use OPE files mode to true (OEP 013).
+
+OPCODE 121 
+Set the use OPE files mode to false (OEP 013).
+
+OPCODE 122 arg0
+Get the number of runtime args and save it to arg0.
+
+OPCODE 123 arg0 arg1 arg2
+Add arg0 and arg1 and save it to arg2 without 4 byte length restriction.
+
+OPCODE 124 arg0 arg1 arg2
+Subtract arg0 from arg1 and save it to arg2 without 4 byte length restriction.
+
+OPCODE 125 arg0
+Create a label at the current line named arg0 (OEP 022).
+
+OPCODE 126 arg0
+Go to label arg0 (OEP 022).
+
+OPCODE 127 arg0 arg1 arg2
+Go to label arg0 if arg1 == arg2 (OEP 022).
+
+OPCODE 128 arg0 arg1 arg2
+Go to label arg0 if arg1 != arg2 (OEP 022).
+
+OPCODE 129 arg0 arg1 arg2
+Go to label arg0 if arg1 > arg2 (float) (OEP 022).
+
+OPCODE 130 arg0 arg1 arg2
+Go to label arg0 if arg1 < arg2 (float) (OEP 022).
+
+OPCODE 131 arg0 arg1 arg2
+Go to label arg0 if arg1 >= arg2 (float) (OEP 022).
+
+OPCODE 132 arg0 arg1 arg2
+Go to label arg0 if arg1 <= arg2 (float) (OEP 022).
+
+OPCODE 133 arg0 arg1 arg2 arg3
+Go to label arg0 if arg1 == arg2 else arg3 (OEP 022).
+
+OPCODE 134 arg0 arg1 arg2 arg3
+Go to label arg0 if arg1 > arg2 (float) else arg3 (OEP 022).
+
+OPCODE 135 arg0 arg1 arg2 arg3
+Go to label arg0 if arg1 < arg2 (float) else arg3 (OEP 022).
+
+OPCODE 136 arg0 arg1 arg2 arg3
+Go to label arg0 if arg1 >= arg2 (float) else arg3 (OEP 022).
+
+OPCODE 137 arg0 arg1 arg2 arg3
+Go to label arg0 if arg1 <= arg2 (float) else arg3 (OEP 022).
+
+OPCODE 138 arg0 arg1 arg2 arg3
+Go to label arg0 if arg1 > arg2 (int) else arg3 (OEP 022).
+
+OPCODE 139 arg0 arg1 arg2 arg3
+Go to label arg0 if arg1 < arg2 (int) else arg3 (OEP 022).
+
+OPCODE 140 arg0 arg1 arg2 arg3
+Go to label arg0 if arg1 >= arg2 (int) else arg3 (OEP 022).
+
+OPCODE 141 arg0 arg1 arg2 arg3
+Go to label arg0 if arg1 <= arg2 (int) else arg3 (OEP 022).
+
+OPCODE 142 arg0 arg1 arg2 arg3
+Go to label arg0 if arg1 != arg2 else arg3 (OEP 022).
+
+OPCODE 143 arg0 arg1
+Push code from labels arg0 to arg1 to a new thread. (asynchronous command) (OEP 001) (OEP 022).
+
+OPCODE 144 arg0 arg1
+Push code from labels arg0 to arg1 to a new thread. (non-async command) (OEP 001) (OEP 022).
+
+OPCODE 145 arg0 arg1 arg2
+Add the values at arg0 and arg1 and save to arg2 (signed int).
+
+OPCODE 146 arg0 arg1 arg2
+Subtract the values at arg0 and arg1 and save to arg2 (signed int).
+
+OPCODE 147 arg0 arg1 arg2
+Multiply the values at arg0 and arg1 and save to arg2 (signed int).
+
+OPCODE 148 arg0 arg1 arg2
+Divide the values at arg0 and arg1 and save to arg2 (signed int).
+
+OPCODE 149 arg0 arg1 arg2
+Raise arg0 to the power of arg1 and save to arg2 (signed int).
+
+OPCODE 150 arg0 arg1 arg2
+Preform an and gate on arg0 and arg1, save to arg2 (signed int).
+
+OPCODE 151 arg0 arg1 arg2
+Preform an or gate on arg0 and arg1, save to arg2 (signed int).
+
+OPCODE 152 arg0 arg1 arg2
+Preform an xor gate on arg0 and arg1, save to arg2 (signed int).
+
+OPCODE 153 arg0 arg1
+arg0 (signed int) to string and save to arg1.
+
+OPCODE 154 arg0 arg1
+arg0 (signed int) to float and save to arg1.
+
+OPCODE 155 arg0 arg1
+arg0 (signed int) to int and save to arg1.
+
+OPCODE 156 arg0 arg1
+arg0 (string) to signed int and save to arg1.
+
+OPCODE 157 arg0 arg1
+arg0 (float) to signed int and save to arg1.
+
+OPCODE 158 arg0 arg1
+arg0 (int) to signed int and save to arg1.
+
+OPCODE 159 
+Stop the program suddenly, including all subprocesses.
+
+OPCODE 160 arg0
+Get shared buffer byte 1 (IN_PROCESS) and save to arg0.
+

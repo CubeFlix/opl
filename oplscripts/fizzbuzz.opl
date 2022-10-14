@@ -1,0 +1,68 @@
+// fizzbuzz
+0
+// set i
+2 f0 i0
+// constant 1 for adding
+2 f1 i1
+// max num
+2 f100 i40
+// line num for starting loop
+2 i20 i2
+// line num for ending loop
+2 i36 i3
+// zero constant
+2 f0 i100
+// fizz, buzz, fizzbuzz strings
+2 s'Fizz
+' i4
+2 s'Buzz
+' i5
+2 s'Fizzbuzz
+' i6
+// setting 3, 5, 15 for mods
+2 f3 i7
+2 f5 i8
+2 f15 i9
+// line num for fizzbuzz
+2 i25 i10
+// line num for checking mod 3 mod 5
+2 i27 i11
+// line num for ending one iteration
+2 i35 i12
+// line num for fizz
+2 i28 i13
+// line num for checking mod 5
+2 i30 i14
+// line num for buzz
+2 i31 i15
+// line num for printing i
+2 i33 i16
+// start the loop here!
+// add 1 to i
+10 i0 i1 i0
+// calculate mod 3, 5, 15
+69 i0 i7 i103
+69 i0 i8 i105
+69 i0 i9 i115
+// if mod 15 is 0
+71 i10 i100 i115 i11
+// here is i10
+30 i6 i1
+20 i12
+// here is i11 for mod 3 and mod 5
+71 i13 i103 i100 i14
+// here is i13 for fizz
+30 i4 i1
+20 i12
+// here is i14 for checking mod 5
+71 i15 i105 i100 i16
+// here is i15 for buzz
+30 i5 i1
+20 i12
+// here is i16 for printing i
+30 i0 i3
+20 i12
+// here is i12 for ending an iteration
+66 i2 i0 i40 i3
+// here is i3 for ending the loop
+1 i0
